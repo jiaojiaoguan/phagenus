@@ -24,7 +24,7 @@ You can follow steps bellow to install Phagenu.
 
 ### step2: install the conda environment.
 
-       cd phagenus/
+       cd phagenus-main/
        conda env create -f phagenus.yaml -n phagenus
        conda activate phagenus
 
@@ -38,7 +38,6 @@ You can follow steps bellow to install Phagenu.
       
       Note: You need to put the "data" folder in "phagenus/".
       
-
 ### step4:
 
        python phagenus.py [--contigs INPUT_FA] [--out OUTPUT_CSV] [--midfolder DIR]
@@ -50,16 +49,11 @@ You can follow steps bellow to install Phagenu.
                      --reject             The uncertainty threshold (default 0.035)
                      --sim                We prepare two database and model for different scenes. You can choose high-smilarity or low-similarity                                               database and model. The paremeters are "high" or "low". (default high)
 
-                        
-
-
-
 ## Example
 
        python phagenus.py --contigs test_contigs.fasta --midfolder test_phagenus --sim high
 
        The prediction will be written in prediction_output.csv. The CSV file has three columns: contigs, prediction, and uncertainty score. 
-
 
 ### Contact
 If you have any questions, please email us: jiaojguan2-c@my.cityu.edu.hk

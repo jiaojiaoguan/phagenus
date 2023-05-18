@@ -10,25 +10,25 @@ If you have any trouble installing or using Phagenus, please let us know by emai
 ## Quick install
 Note: we suggest you to install all the package using conda (both miniconda and Anaconda are ok).
 
-After cloning this respository, you can use anaconda to install the phagenus.yaml. This will install all packages you need with gpu mode (make sure you have installed cuda on your system to use the gpu version. Othervise, it will run with cpu version). The command is: conda env create -f phagenus.yaml -n phagenus
+After cloning this respository, you can use anaconda to install the phagenus.yaml. This will install all packages you need with gpu mode (make sure you have installed cuda on your system to use the gpu version). We use multiple GPU to accelerate the training. Therefore, you need to use more than one GPU to run Phagenus.
 
 ### Prepare the database and environment
 
 Due to the limited size of the GitHub, we zip the database. You can download the database and model from Google Drive or Baidu Netdisk(百度网盘). 
 You can follow steps bellow to install Phagenu.
 
-### step1: download the code.
+### Step1: Download the code.
 
        wget https://github.com/jiaojiaoguan/phagenus/archive/refs/heads/main.zip
        unzip main.zip
 
-### step2: install the conda environment.
+### Step2: Install the conda environment.
 
        cd phagenus-main/
        conda env create -f phagenus.yaml -n phagenus
        conda activate phagenus
 
-### step3: download the database and model.
+### Step3: Download the database and model.
        
       from the Google Drive:
       https://drive.google.com/file/d/1_nxQD6Q87tM2y1biAXKtZcrTEzINwH-w/view?usp=share_link
@@ -38,7 +38,7 @@ You can follow steps bellow to install Phagenu.
       
       Note: You need to put the "data" folder in "phagenus/".
       
-### step4:
+### Step4: Run Phagenus model.
 
        python phagenus.py [--contigs INPUT_FA] [--out OUTPUT_CSV] [--midfolder DIR]
 

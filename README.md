@@ -19,14 +19,14 @@ You can follow steps bellow to install Phagenu.
 
 ### step1: download the code.
 
-wget https://github.com/jiaojiaoguan/phagenus/archive/refs/heads/main.zip
-unzip main.zip
+       wget https://github.com/jiaojiaoguan/phagenus/archive/refs/heads/main.zip
+       unzip main.zip
 
 ### step2: install the conda environment.
 
-cd phagenus/
-conda env create -f phagenus.yaml -n phagenus
-conda activate phagenus
+       cd phagenus/
+       conda env create -f phagenus.yaml -n phagenus
+       conda activate phagenus
 
 ### step3: download the database and model.
        

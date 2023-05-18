@@ -83,3 +83,6 @@ model.load_state_dict(checkpoint['state_dict'])
 optimizer.load_state_dict(checkpoint['optimizer'])
 
 _ = check_accuracy_dropout(loader=test_loader, model=model,midfolder=out_fn+"/",var_cutoff=inputs.reject,output=inputs.out)
+print("*******************")
+print("*****ALL DONE!*****")
+print("*******************")

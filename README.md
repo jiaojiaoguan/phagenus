@@ -39,7 +39,8 @@ You can follow steps bellow to install Phagenu.
       Note: You need to put the "data" folder in "phagenus/".
       
 ### Step4: Run Phagenus model.
-
+       An example command is provided below in the "job.sh" file. You may use "sbatch job.sh" to execute it.
+       
        python phagenus.py [--contigs INPUT_FA] [--out OUTPUT_CSV] [--midfolder DIR]
 
                      --contigs INPUT_FA   input fasta file

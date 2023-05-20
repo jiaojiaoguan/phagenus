@@ -1,16 +1,16 @@
 
 ## Overview
 
-Phagenus is a learning-based model, which conducts genus-level taxonomic classification for phage contigs. It utilizes a powerful transformer model to learn the association between protein clusters and support the classification of up to 508 genera.
+PhaGenus is a learning-based model, which conducts genus-level taxonomic classification for phage contigs. It utilizes a powerful transformer model to learn the association between protein clusters and support the classification of up to 508 genera.
 
 The input of the program should be fasta files and the output will be a csv file showing the predictions. Since it is a deep learning model, if you have GPU units on your PC, we recommand you to use them to save your time.
 
-If you have any trouble installing or using Phagenus, please let us know by emailing us (jiaojguan2-c@my.cityu.edu.hk).
+If you have any trouble installing or using PhaGenus, please let us know by emailing us (jiaojguan2-c@my.cityu.edu.hk).
 
 ## Quick install
 Note: we suggest you to install all the package using conda (both miniconda and Anaconda are ok).
 
-After cloning this respository, you can use anaconda to install the phagenus.yaml. This will install all packages you need with gpu mode (make sure you have installed cuda on your system to use the gpu version). We use multiple GPU to accelerate the training. Therefore, you need to use more than one GPU to run Phagenus.
+After cloning this respository, you can use anaconda to install the phaGenus.yaml. This will install all packages you need with gpu mode (make sure you have installed cuda on your system to use the gpu version). We use multiple GPU to accelerate the training. Therefore, you need to use more than one GPU to run PhaGenus.
 
 ### Prepare the database and environment
 
@@ -38,7 +38,7 @@ You can follow steps bellow to install Phagenu.
       
       Note: You need to put the "data" folder in "phagenus/".
       
-### Step4: Run Phagenus model.
+### Step4: Run PhaGenus model.
        An example command is provided below in the "job.sh" file. You may use "sbatch job.sh" to execute it.
        
        python phagenus.py [--contigs INPUT_FA] [--out OUTPUT_CSV] [--midfolder DIR]

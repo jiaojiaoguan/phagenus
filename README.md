@@ -1,3 +1,4 @@
+![icon](https://github.com/jiaojiaoguan/phagenus/assets/43172888/16438222-6fe5-4f32-8eaa-ec4d4c6cb182)
 
 ## Overview
 

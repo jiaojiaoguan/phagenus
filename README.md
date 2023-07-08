@@ -49,7 +49,7 @@ You can follow steps bellow to install Phagenu.
                      --out OUTPUT_CSV     The output csv file (prediction_output.csv in midfolder)                
                      --midfolder DIR      Folder to store the intermediate files (default midfolder/)
                      --reject             The uncertainty threshold (default 0.035)
-                     --sim                We prepare two database and model for different scenes. You can choose high-smilarity or low-similarity                                               database and model. The paremeters are "high" or "low". (default high)
+                     --sim                We prepare two database and model for different scenes. You can choose high-smilarity or low-similarity database and model. The paremeters are "high" or "low". (default high)
 
 ## Example
 

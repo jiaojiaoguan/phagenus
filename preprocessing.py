@@ -116,7 +116,7 @@ def preprocessing_data(input_data,midfolder,similarity,length,threads):
         protein_cluster_database="data/protein_cluster_high_similarity.csv"
 
     elif similarity=="low":
-        database="data/low_similarity_complete_genome.dmnd"
+        database="data/low_similarity_complete_genome"
         protein_cluster_database="data/protein_cluster_low_similarity.csv"
     else:
         print("You do not choose database!")

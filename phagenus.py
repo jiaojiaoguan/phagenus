@@ -78,7 +78,10 @@ if torch.cuda.device_count() > 1:
 model.to(device)
 
 print(f"Loading checkpoint...model.pth.tar")
-checkpoint = torch.load("data/model_protein_transformer_distance_30_combine_label.pth.tar")
+if similarity=="high":
+    checkpoint = torch.load("data/model_protein_transformer_distance_30_combine_label.pth.tar")
+elif similarity=="low":
+    checkpoint = torch.load("data/model_protein_transformer_distance_70_combine_label.pth.tar")
 model.load_state_dict(checkpoint['state_dict'])
 optimizer.load_state_dict(checkpoint['optimizer'])
 

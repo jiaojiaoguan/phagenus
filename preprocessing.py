@@ -85,7 +85,7 @@ def convert_sequence_to_protein_sentences(protein_cluster_database,diamond_out_f
             for ps in protein_sentence[:-1]:
                 file1.write(ps+" ")
             file1.write(protein_sentence[-1])
-        file1.write("\n")
+            file1.write("\n")
     file1.close()
     return 1
 

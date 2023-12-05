@@ -26,6 +26,9 @@ parser.add_argument("--sim",help="input the high similarity or low similarty",ty
 
 inputs = parser.parse_args()
 
+#determine GPU or CPU, which device is used.
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # Specify the GPU device
+
 input_data=inputs.contigs
 out_fn = inputs.midfolder
 similarity=inputs.sim
@@ -66,6 +69,7 @@ model = Transformer(
     num_layers=num_layers,
     heads=12,
     embed_size=768,
+    device=device
 )
 
 # Loss and optimizer
@@ -79,11 +83,25 @@ model.to(device)
 
 print(f"Loading checkpoint...model.pth.tar")
 if similarity=="high":
-    checkpoint = torch.load("data/model_protein_transformer_distance_30_combine_label.pth.tar")
+    checkpoint = torch.load("data/model_protein_transformer_distance_30_combine_label.pth.tar",map_location=torch.device('cpu'))
 elif similarity=="low":
     checkpoint = torch.load("data/model_protein_transformer_distance_70_combine_label.pth.tar")
-model.load_state_dict(checkpoint['state_dict'])
+
+# model.load_state_dict(checkpoint['state_dict'])
 optimizer.load_state_dict(checkpoint['optimizer'])
+
+stact_dict=checkpoint['state_dict']
+optimizer_dict=checkpoint['optimizer']
+
+update_dict={}
+for k,v in stact_dict.items():
+    new_key=k[7:]
+    update_dict[new_key]=v
+
+model.load_state_dict(update_dict)
+
+
+model = model.to(device)
 
 _ = check_accuracy_dropout(loader=test_loader, model=model,midfolder=out_fn+"/",var_cutoff=inputs.reject,output=inputs.out)
 print("*******************")

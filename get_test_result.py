@@ -5,7 +5,7 @@ from torch import nn
 import shutil
 
 def check_accuracy_dropout(loader, model,midfolder,var_cutoff,output):
-
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     dir_path=midfolder+"tmp/"
 
     if os.path.exists(dir_path) and os.path.isdir(dir_path):
@@ -46,7 +46,7 @@ def check_accuracy_dropout(loader, model,midfolder,var_cutoff,output):
     with torch.no_grad():
         for test_iter in range(test_steps):
             for sid, (sequence, contig) in enumerate(loader):
-                sequence = sequence.cuda()
+                sequence = sequence.to(device)
                 test_output1 = model(sequence)
                 test_output = torch.softmax(test_output1, dim=1)
                 _, predictions = torch.max(softmax_fun(test_output1), dim=1)
